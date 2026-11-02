@@ -3,7 +3,7 @@ Codyssey E1-1 Personal Mission
 
 # List
 - [Terminal_Log](../01-TERMINAL/Terminal.md)
-- [Permission_Change_Log]
+- [Permission_Change_Log](../01-TERMINAL/Permission_Change.md)
 - [Docker_Setting_Log](../02-DOCKER/Docker.md)
 - [Dockerfile_Log](../02-DOCKER/DockerFile.md)
 - [Port_Mapping_Log](../02-DOCKER/Docker_Port.md)
