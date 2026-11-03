@@ -17,7 +17,7 @@ Codyssey E1-1 Personal Mission
 - [x] README.md 파일 생성 및 과제 규칙에 맞는 폴더 구조 생성
 
 ## 2. README.md
-= [x] 프로젝트 개요와 미션 목표 요약
+- [x] 프로젝트 개요와 미션 목표 요약
 - [ ] 실행 환경 작성 : OS, 터미널, Docker 버전, Git 버전
 - [ ] 수행 항목 체크리스트 작성 : 터미널, 권한, Docker, DockerFile, 포트, 볼륨, Git, GitHub
 - [ ] 검증 방법 기록
