@@ -6,7 +6,7 @@ Codyssey E1-1 Personal Mission
 
 
 ## 실행 환경
-- OS : VM Ubuntu 26.04.1 LTS
+- OS : VM Ubuntu 24.04.4 LTS
 - Docker :
 - Git :
 
