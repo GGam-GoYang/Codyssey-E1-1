@@ -76,18 +76,18 @@ git version 2.43.0
 - [ ] 실행 명령어와 실제 화면 캡처 및 기록
 
 ## 8. 바인드 마운트
-### [주요 개념](Evidence/02-DOCKER/Main.md) [로그 파일](Evidence/02-DOCKER/Docker_Bind.md)
+### [주요 개념](Evidence/02-DOCKER/Main.md) | [로그 파일](Evidence/02-DOCKER/Docker_Bind.md)
 - [ ] 호스트·컨테이너 경로 연결 및 바인드 마운트 진행
 - [ ] 호스트 파일 변경 반영 확인 및 명령어·변경 전후 비교 기록
 
 ## 9. 볼륨 영속성
-### [주요 개념](Evidence/02-DOCKER/Main.md) [로그 파일](Evidence/02-DOCKER/Docker_Volume.md)
+### [주요 개념](Evidence/02-DOCKER/Main.md) | [로그 파일](Evidence/02-DOCKER/Docker_Volume.md)
 - [ ] 볼륨 생성·연결 및 데이터 저장
 - [ ] 기존 컨테이너 삭제 후 새 컨테이너에 동일 볼륨 연결
 - [ ] 데이터 유지 확인 및 명령어·삭제 전후 비교 기록
 
 ## 10. Git 설정 ∙ VSCode GitHub 연동
-### [주요 개념](Evidence/03-GIT/Main.md) [로그 파일](Evidence/03-GIT/Git.md)
+### [주요 개념](Evidence/03-GIT/Main.md) | [로그 파일](Evidence/03-GIT/Git.md)
 - [ ] Git·GitHub 역할 이해 및 사용자 정보·기본 브랜치 설정, git config --list 기록
 - [ ] VSCode GitHub 로그인·저장소 연동 및 증거 업로드
 </details>
