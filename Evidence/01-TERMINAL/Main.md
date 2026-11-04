@@ -38,7 +38,7 @@ E1-1  TESTDIR
 - 명령어 : `pwd`
 - 실행 결과 : 현재 작업 중인 디렉토리의 절대 경로 출력
 
-```bash
+```text
 pwd
 ```
 
@@ -51,7 +51,7 @@ pwd
 - `.` : 현재 디렉토리
 - `..` : 상위 디렉토리
 
-```bash
+```text
 ls -la
 ```
 
@@ -69,7 +69,7 @@ ls -la
 | `..` | 상대 경로 | 현재 디렉토리의 상위 디렉토리 |
 | `~/Codyssey` | 홈 기준 경로 | 사용자 홈 아래의 `Codyssey` |
 
-```bash
+```text
 cd original/
 cd ..
 cd /tmp
@@ -83,7 +83,7 @@ cd ~/Codyssey/Projects/E1-1/Terminal/
 - `\n` : 줄바꿈
 - `>` : 출력을 파일로 보내며, 파일이 없으면 생성하고 이미 있으면 기존 내용을 덮어씀
 
-```bash
+```text
 printf 'My Terminal\n' > original/note.txt
 ```
 
@@ -94,7 +94,7 @@ printf 'My Terminal\n' > original/note.txt
 - 이미 존재하는 파일에는 내용을 덮어쓰지 않고 접근·수정 시각을 갱신
 - 이름 앞에 `.`을 붙이면 숨김 파일로 취급
 
-```bash
+```text
 touch .hidden-file
 ```
 
@@ -103,7 +103,7 @@ touch .hidden-file
 - 명령어 : `cp 원본경로 대상경로`
 - 실행 결과 : 원본 파일을 유지하면서 대상 경로에 복사본 생성
 
-```bash
+```text
 cp original/note.txt copied/note-copy.txt
 ```
 
@@ -112,7 +112,7 @@ cp original/note.txt copied/note-copy.txt
 - 명령어 : `cat 파일경로`
 - 실행 결과 : 지정한 파일의 내용을 터미널에 출력
 
-```bash
+```text
 cat copied/note-copy.txt
 ```
 
@@ -122,7 +122,7 @@ cat copied/note-copy.txt
 - 실행 결과 : 같은 디렉토리에서 다른 이름을 지정하면 이름 변경, 다른 디렉토리를 지정하면 이동
 - 복사와 달리 기존 경로에는 원본이 남지 않음
 
-```bash
+```text
 # 같은 디렉토리에서 이름 변경
 mv copied/note-copy.txt copied/renamed.txt
 
@@ -136,7 +136,7 @@ mv copied/renamed.txt original/
 - 실행 결과 : 지정한 파일 삭제
 - 아래 예시는 실습에서 만든 `renamed.txt`만 삭제
 
-```bash
+```text
 rm original/renamed.txt
 ```
 
@@ -146,7 +146,7 @@ rm original/renamed.txt
 - 실행 결과 : 지정한 디렉토리가 비어 있으면 삭제
 - 내부에 파일이나 디렉토리가 남아 있으면 삭제되지 않음
 
-```bash
+```text
 rmdir copied
 ```
 
@@ -156,7 +156,7 @@ rmdir copied
 - 실행 결과 : 지정한 파일 또는 디렉토리 자체의 권한과 상세 정보 출력
 - `-d` : 디렉토리 내부 목록이 아닌 디렉토리 자체의 정보 표시
 
-```bash
+```text
 ls -l original/note.txt
 ls -ld permission-dir/
 ```
@@ -221,7 +221,7 @@ ls -ld permission-dir/
 - 실행 결과 : 지정한 파일 또는 디렉토리의 권한 변경
 - 변경 전후에 `ls -l` 또는 `ls -ld`로 결과 확인
 
-```bash
+```text
 # 파일 권한 확인 및 변경
 ls -l original/note.txt
 chmod 640 original/note.txt
