@@ -3,32 +3,243 @@
 ## 개요 : 본 문서는 터미널 사용 중 학습한 개념들을 아래와 같이 정리한 문서임.
 
 ### 폴더 생성 (MaKe DIRectory)
-- 명령어 : mkdir <인자> <폴더명>
-- 실행 결과: 해당 shell의 있는 폴더를 기준으로 입력한 폴더명을 가진 하위 폴더 생성
+- 명령어 : mkdir [옵션] 디렉토리명
+- 실행 결과 : 지정한 경로에 디렉토리 생성. 상대 경로 입력시 현재 디렉토리를 기준으로 생성
+- '-p' : 경로에 지정된 상위 디렉토리가 존재하지 않을 경우 상위 디렉토리까지 함께 생성
 ```text
-me@vm_ubuntu~/Codyssey/Projects$ mkdir TESTDIR
+~/Codyssey/Projects$ mkdir TESTDIR
 
-me@vm_ubuntu:~$ mkdir -p Codyssey/Projects/E1-1
+~$ mkdir -p Codyssey/Projects/E1-1
 ```
 
 ### 리스트 출력 (LiSt)
-- 명령어 : ls
-- 실행 결과: 해당 shell의 있는 폴더를 기준으로 폴더 내의 폴더∙파일 리스트를 출력
+- 명령어 : ls 경로
+- 실행 결과 : 해당 경로의 디렉토리 내 파일·디렉토리 이름 목록 출력 (경로 미입력 시 현재 디렉토리로)
 ```text
-me@vm_ubuntu~/Codyssey/Projects$ ls
+~/Codyssey/Projects$ ls
 E1-1  TESTDIR
 ```
 
 ### 경로 변경 (Change Directory)
-- 명령어 : cd <절대경로, 상대경로 또는 ..>
-- 실행 결과: 입력한 경로 또는 상위 폴더(.. 입력 시 )로 이동
+- 명령어 : cd 경로
+- 실행 결과 : 입력한 디렉토리로 이동. '..' 입력 시 상위 디렉토리로 이동
 ```text
-me@vm_ubuntu~/test$ cd ~/Codyssey/Projects/E1-1
-me@vm_ubuntu~/Codyssey/Projects/E1-1$
+~/test$ cd ~/Codyssey/Projects/E1-1
+~/Codyssey/Projects/E1-1$
 
-me@vm_ubuntu~$ cd Codyssey/
-me@vm_ubuntu~/Codyssey$
+~$ cd Codyssey/
+~/Codyssey$
 
-me@vm_ubuntu~/Codyssey/Projects/E1-1$ cd ..
-me@vm_ubuntu~/Codyssey/Projects$
+~/Codyssey/Projects/E1-1$ cd ..
+~/Codyssey/Projects$
 ```
+### 현재 경로 확인 (Print Working Directory)
+
+- 명령어 : `pwd`
+- 실행 결과 : 현재 작업 중인 디렉토리의 절대 경로 출력
+
+```bash
+pwd
+```
+
+### 숨김 파일 및 상세 목록 출력
+
+- 명령어 : `ls -la`
+- 실행 결과 : 현재 디렉토리의 숨김 파일을 포함한 전체 목록과 상세 정보 출력
+- `-l` : 파일 종류, 권한, 소유자, 그룹, 크기, 수정 시각 등의 상세 정보 표시
+- `-a` : 이름이 `.`으로 시작하는 숨김 파일과 디렉토리도 표시
+- `.` : 현재 디렉토리
+- `..` : 상위 디렉토리
+
+```bash
+ls -la
+```
+
+### 절대 경로와 상대 경로
+
+- 절대 경로 : 최상위 디렉토리인 `/`부터 시작하는 경로
+- 상대 경로 : 현재 작업 중인 디렉토리를 기준으로 지정하는 경로
+- `~` : 현재 사용자의 홈 디렉토리를 나타내며, 셸에서 홈 경로로 확장
+
+| 표기 | 구분 | 의미 |
+| --- | --- | --- |
+| `/tmp` | 절대 경로 | 최상위 디렉토리 아래의 `tmp` |
+| `/home/student/Codyssey` | 절대 경로 | `/`부터 지정한 전체 경로 |
+| `original/` | 상대 경로 | 현재 디렉토리 아래의 `original` |
+| `..` | 상대 경로 | 현재 디렉토리의 상위 디렉토리 |
+| `~/Codyssey` | 홈 기준 경로 | 사용자 홈 아래의 `Codyssey` |
+
+```bash
+cd original/
+cd ..
+cd /tmp
+cd ~/Codyssey/Projects/E1-1/Terminal/
+```
+
+### 내용을 가진 파일 생성 (printf 및 출력 리다이렉션)
+
+- 명령어 : `printf '내용\n' > 파일경로`
+- 실행 결과 : 출력할 내용을 지정한 파일에 저장
+- `\n` : 줄바꿈
+- `>` : 출력을 파일로 보내며, 파일이 없으면 생성하고 이미 있으면 기존 내용을 덮어씀
+
+```bash
+printf 'My Terminal\n' > original/note.txt
+```
+
+### 빈 파일 생성 (touch)
+
+- 명령어 : `touch 파일명`
+- 실행 결과 : 파일이 없으면 빈 파일 생성
+- 이미 존재하는 파일에는 내용을 덮어쓰지 않고 접근·수정 시각을 갱신
+- 이름 앞에 `.`을 붙이면 숨김 파일로 취급
+
+```bash
+touch .hidden-file
+```
+
+### 파일 복사 (CoPy)
+
+- 명령어 : `cp 원본경로 대상경로`
+- 실행 결과 : 원본 파일을 유지하면서 대상 경로에 복사본 생성
+
+```bash
+cp original/note.txt copied/note-copy.txt
+```
+
+### 파일 내용 출력 (cat)
+
+- 명령어 : `cat 파일경로`
+- 실행 결과 : 지정한 파일의 내용을 터미널에 출력
+
+```bash
+cat copied/note-copy.txt
+```
+
+### 파일 이름 변경 및 이동 (MoVe)
+
+- 명령어 : `mv 원본경로 대상경로`
+- 실행 결과 : 같은 디렉토리에서 다른 이름을 지정하면 이름 변경, 다른 디렉토리를 지정하면 이동
+- 복사와 달리 기존 경로에는 원본이 남지 않음
+
+```bash
+# 같은 디렉토리에서 이름 변경
+mv copied/note-copy.txt copied/renamed.txt
+
+# 다른 디렉토리로 이동
+mv copied/renamed.txt original/
+```
+
+### 파일 삭제 (ReMove)
+
+- 명령어 : `rm 파일경로`
+- 실행 결과 : 지정한 파일 삭제
+- 아래 예시는 실습에서 만든 `renamed.txt`만 삭제
+
+```bash
+rm original/renamed.txt
+```
+
+### 빈 디렉토리 삭제 (ReMove DIRectory)
+
+- 명령어 : `rmdir 디렉토리경로`
+- 실행 결과 : 지정한 디렉토리가 비어 있으면 삭제
+- 내부에 파일이나 디렉토리가 남아 있으면 삭제되지 않음
+
+```bash
+rmdir copied
+```
+
+### 파일 및 디렉토리 자체의 권한 확인
+
+- 명령어 : `ls -l 파일경로`, `ls -ld 디렉토리경로`
+- 실행 결과 : 지정한 파일 또는 디렉토리 자체의 권한과 상세 정보 출력
+- `-d` : 디렉토리 내부 목록이 아닌 디렉토리 자체의 정보 표시
+
+```bash
+ls -l original/note.txt
+ls -ld permission-dir/
+```
+
+### 파일 종류 및 권한 문자열 해석
+
+- `ls -l` 출력의 첫 번째 문자는 파일 종류를 의미
+- 뒤의 9개 문자는 3개씩 나누어 소유자·그룹·기타 사용자의 권한을 의미
+- `-`는 권한 영역에서는 해당 권한이 없음을 의미
+
+| 구분 | `drwxr-x---`의 해당 부분 | 의미 |
+| --- | --- | --- |
+| 파일 종류 | `d` | 디렉토리 |
+| 소유자 권한 | `rwx` | 읽기·쓰기·실행 |
+| 그룹 권한 | `r-x` | 읽기·실행 |
+| 기타 사용자 권한 | `---` | 권한 없음 |
+
+| 첫 번째 문자 | 파일 종류 |
+| --- | --- |
+| `-` | 일반 파일 |
+| `d` | 디렉토리 |
+| `l` | 심볼릭 링크 |
+| `c` | 문자 장치 파일 |
+| `b` | 블록 장치 파일 |
+| `p` | 이름 있는 파이프(FIFO) |
+| `s` | 소켓 |
+
+### 읽기·쓰기·실행 권한
+
+- `r` : 읽기 권한
+- `w` : 쓰기 권한
+- `x` : 실행 권한
+- 파일과 디렉토리에서 각 권한의 구체적인 의미는 다름
+
+| 권한 | 파일 | 디렉토리 |
+| --- | --- | --- |
+| `r` | 파일 내용 읽기 | 내부 파일·디렉토리 이름 목록 확인 |
+| `w` | 파일 내용 수정 | 내부 항목 생성·삭제·이름 변경 (`x` 권한도 필요) |
+| `x` | 실행 가능한 파일 실행 | 디렉토리 진입 및 내부 항목에 경로로 접근 |
+
+### 권한의 숫자 표기
+
+- 읽기(`r`)는 4, 쓰기(`w`)는 2, 실행(`x`)은 1로 표현
+- 부여할 권한의 숫자를 합하여 한 자리로 표시
+- 세 자리 숫자는 왼쪽부터 소유자 → 그룹 → 기타 사용자 순서
+- 파일 종류를 나타내는 첫 번째 문자는 권한 숫자에 포함하지 않음
+
+| 숫자 | 권한 표기 | 계산 | 의미 |
+| --- | --- | --- | --- |
+| 0 | `---` | 0 | 권한 없음 |
+| 1 | `--x` | 1 | 실행 |
+| 2 | `-w-` | 2 | 쓰기 |
+| 3 | `-wx` | 2 + 1 | 쓰기·실행 |
+| 4 | `r--` | 4 | 읽기 |
+| 5 | `r-x` | 4 + 1 | 읽기·실행 |
+| 6 | `rw-` | 4 + 2 | 읽기·쓰기 |
+| 7 | `rwx` | 4 + 2 + 1 | 읽기·쓰기·실행 |
+
+### 권한 변경 (CHange MODe)
+
+- 명령어 : `chmod 권한숫자 대상경로`
+- 실행 결과 : 지정한 파일 또는 디렉토리의 권한 변경
+- 변경 전후에 `ls -l` 또는 `ls -ld`로 결과 확인
+
+```bash
+# 파일 권한 확인 및 변경
+ls -l original/note.txt
+chmod 640 original/note.txt
+ls -l original/note.txt
+chmod 600 original/note.txt
+ls -l original/note.txt
+
+# 디렉토리 권한 확인 및 변경
+ls -ld permission-dir/
+chmod 750 permission-dir/
+ls -ld permission-dir/
+chmod 700 permission-dir/
+ls -ld permission-dir/
+```
+
+| 설정 | 소유자 | 그룹 | 기타 사용자 |
+| --- | --- | --- | --- |
+| `640` | `rw-` | `r--` | `---` |
+| `600` | `rw-` | `---` | `---` |
+| `750` | `rwx` | `r-x` | `---` |
+| `700` | `rwx` | `---` | `---` |
