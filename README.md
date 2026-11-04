@@ -29,7 +29,9 @@ $ git --version
 git version 2.43.0
 ```
 
-# 체크리스트
+<details>
+<summary><h1>체크리스트</h1></summary>
+  
 ## 1. GitHub 레포지토리 생성
 - [x] 레포지토리를 Public으로 생성
 - [x] README.md 파일 생성 및 과제 규칙에 맞는 폴더 구조 생성
@@ -88,7 +90,11 @@ git version 2.43.0
 ### [주요 개념](Evidence/03-GIT/Main.md) [로그 파일](Evidence/03-GIT/Git.md)
 - [ ] Git·GitHub 역할 이해 및 사용자 정보·기본 브랜치 설정, git config --list 기록
 - [ ] VSCode GitHub 로그인·저장소 연동 및 증거 업로드
+</details>
 
+<details>
+<summary><h1>보너스 과제</h1></summary>
+  
 # 보너스 과제
 ## 1. Docker Compose 기초
 - [ ] Compose 파일의 기본 구조 이해 및 단일 서비스 실행
@@ -109,3 +115,4 @@ git version 2.43.0
 - [ ] SSH 키 생성·등록 및 HTTPS와 SSH 인증 방식 차이 이해
 - [ ] SSH 방식의 원격 저장소 설정·푸시 성공 확인 및 결과 기록
 - [Evidence](Evidence/00-INDEX/Evidence.md) 
+</details>
