@@ -82,9 +82,9 @@ git version 2.43.0
 
 ## 9. 볼륨 영속성
 ### [주요 개념](Evidence/02-DOCKER/Main.md) | [로그 파일](Evidence/02-DOCKER/Docker_Volume.md)
-- [ ] 볼륨 생성·연결 및 데이터 저장
-- [ ] 기존 컨테이너 삭제 후 새 컨테이너에 동일 볼륨 연결
-- [ ] 데이터 유지 확인 및 명령어·삭제 전후 비교 기록
+- [x] 볼륨 생성·연결 및 데이터 저장
+- [x] 기존 컨테이너 삭제 후 새 컨테이너에 동일 볼륨 연결
+- [x] 데이터 유지 확인 및 명령어·삭제 전후 비교 기록
 
 ## 10. Git 설정 ∙ VSCode GitHub 연동
 ### [주요 개념](Evidence/03-GIT/Main.md) | [로그 파일](Evidence/03-GIT/Git.md)
