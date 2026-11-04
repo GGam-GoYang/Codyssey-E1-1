@@ -72,8 +72,8 @@ git version 2.43.0
 
 ## 7. 포트 매핑 및 접속 테스트
 ### [주요 개념](Evidence/02-DOCKER/Main.md)  | [로그 파일](Evidence/02-DOCKER/Docker_Port.md)
-- [ ] 포트 매핑 후 서로 다른 포트로 2회 접속
-- [ ] 실행 명령어와 실제 화면 캡처 및 기록
+- [x] 포트 매핑 후 서로 다른 포트로 2회 접속
+- [x] 실행 명령어와 실제 화면 캡처 및 기록
 
 ## 8. 바인드 마운트
 ### [주요 개념](Evidence/02-DOCKER/Main.md) | [로그 파일](Evidence/02-DOCKER/Docker_Bind.md)
@@ -95,7 +95,6 @@ git version 2.43.0
 <details>
 <summary><h1>보너스 과제</h1></summary>
   
-# 보너스 과제
 ## 1. Docker Compose 기초
 - [ ] Compose 파일의 기본 구조 이해 및 단일 서비스 실행
 - [ ] 실행 설정을 파일로 관리하는 이유 정리 및 실행 결과 기록
