@@ -77,8 +77,8 @@ git version 2.43.0
 
 ## 8. 바인드 마운트
 ### [주요 개념](Evidence/02-DOCKER/Main.md) | [로그 파일](Evidence/02-DOCKER/Docker_Bind.md)
-- [ ] 호스트·컨테이너 경로 연결 및 바인드 마운트 진행
-- [ ] 호스트 파일 변경 반영 확인 및 명령어·변경 전후 비교 기록
+- [x] 호스트·컨테이너 경로 연결 및 바인드 마운트 진행
+- [x] 호스트 파일 변경 반영 확인 및 명령어·변경 전후 비교 기록
 
 ## 9. 볼륨 영속성
 ### [주요 개념](Evidence/02-DOCKER/Main.md) | [로그 파일](Evidence/02-DOCKER/Docker_Volume.md)
