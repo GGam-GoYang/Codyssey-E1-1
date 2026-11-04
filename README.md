@@ -36,7 +36,7 @@ git version 2.43.0
 
 ## 2. README.md
 - [x] 프로젝트 개요와 미션 목표 요약
-- [x] 실행 환경 작성 : OS, 터미널, Docker 버전, Git 버전
+- [x] 실행 환경 작성 : OS, 셸, 터미널, Docker 버전, Git 버전
 - [x] 수행 항목 체크리스트 작성 : 터미널, 권한, Docker, DockerFile, 포트, 볼륨, Git, GitHub
 - [ ] 검증 방법 기록
 - [ ] 검증 결과 파일, 링크를 통해 본문에 연결
@@ -60,6 +60,7 @@ git version 2.43.0
 - [ ] 이미지 다운로드와 목록 확인 및 컨테이너 실행·중지·목록 확인
 - [ ] hello-world 실행 및 Ubuntu 내부 명령 수행
 - [ ] 컨테이너 종료/유지 차이 관찰
+- [ ] 컨테이너 로그·리소스 확인 및 명령어·출력 기록
 
 ## 6. DockerFile 사용
 ### [주요 개념](Evidence/02-DOCKER/Main.md) 
@@ -81,7 +82,7 @@ git version 2.43.0
 ### [주요 개념](Evidence/02-DOCKER/Main.md) 
 - [ ] 볼륨 생성·연결 및 데이터 저장
 - [ ] 기존 컨테이너 삭제 후 새 컨테이너에 동일 볼륨 연결
-- [ ] 데이터 유지 확인 및 명령어·삭제 전후 비교 기
+- [ ] 데이터 유지 확인 및 명령어·삭제 전후 비교 기록
 
 ## 10. Git 설정 ∙ VSCode GitHub 연동
 ### [주요 개념](Evidence/03-GIT/Main.md) 
