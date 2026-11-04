@@ -7,7 +7,7 @@
 ~/Codyssey/Projects/E1-1/Docker$ docker --version # 도커 버전 확인
 Docker version 29.1.3, build 29.1.3-0ubuntu3~24.04.2
 
-~/Codyssey/Projects/E1-1/Docker$ sudo docker info # 도커 상세 정보 및 데몬과의 통식 확인
+~/Codyssey/Projects/E1-1/Docker$ sudo docker info # 도커 상세 정보 및 데몬과의 통신 확인
 Client:
  Version:    29.1.3
  Context:    default
@@ -300,3 +300,4 @@ c4030efcc5f7   ubuntu:24.04         "bash"                    3 minutes ago   Ex
 
 ~/Codyssey/Projects/E1-1/Docker$
 ```
+</details>
