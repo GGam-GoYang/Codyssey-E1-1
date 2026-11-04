@@ -44,18 +44,18 @@ git version 2.43.0
 - [ ] 기술 문서 만으로 전체 수행 내용 파악 가능한지 확인
 
 ## 3. 터미널 조작
-### [주요 개념](Evidence/01-TERMINAL/Main.md#터미널-조작) 
+### [주요 개념](Evidence/01-TERMINAL/Main.md#터미널-조작) | [로그 파일](Evidence/01-TERMINAL/Terminal.md)
 - [x] 현재 위치, 숨김 파일을 포함한 목록 확인 및 디렉토리 이동
 - [x] 파일 및 폴더의 생성, 복사, 이동, 이름 변경, 삭제
 - [x] 절대 경로, 상대 경로의 이해와 핵심 명령어 정리 및 출력 기록
 
 ## 4. 권한 실습
-### [주요 개념](Evidence/01-TERMINAL/Main.md#권한-실습) 
+### [주요 개념](Evidence/01-TERMINAL/Main.md#권한-실습) | [로그 파일](Evidence/01-TERMINAL/Permission_Change.md)
 - [x] r/w/x 권한 구성 및 숫자 표기 이해
 - [x] 1개 이상의 파일·디렉토리 권한 확인·변경과 전후 비교 기록 
 
 ## 5. Docker 설치 및 운영
-### [주요 개념](Evidence/02-DOCKER/Main.md) 
+### [주요 개념](Evidence/02-DOCKER/Main.md) | [로그 파일](Evidence/02-DOCKER/Docker.md)
 - [x] Docker 설치 및 버전·데몬 동작 확인
 - [x] 이미지 다운로드와 목록 확인 및 컨테이너 실행·중지·목록 확인
 - [x] hello-world 실행 및 Ubuntu 내부 명령 수행
@@ -63,29 +63,29 @@ git version 2.43.0
 - [x] 컨테이너 로그·리소스 확인 및 명령어·출력 기록
 
 ## 6. DockerFile 사용
-### [주요 개념](Evidence/02-DOCKER/Main.md) 
+### [주요 개념](Evidence/02-DOCKER/Main.md) | [로그 파일](Evidence/02-DOCKER/DockerFile.md)
 - [ ] 베이스 선택 및 커스텀 내용·목적 설명
-- [ ] 웹 소스·DockerFile 작성 및 저장소 업로드
-- [ ] 이미지 빌드·컨테이너 실행 후 명령어·결과 기록
+- [x] 웹 소스·DockerFile 작성 및 저장소 업로드
+- [x] 이미지 빌드·컨테이너 실행 후 명령어·결과 기록
 
 ## 7. 포트 매핑 및 접속 테스트
-### [주요 개념](Evidence/02-DOCKER/Main.md) 
+### [주요 개념](Evidence/02-DOCKER/Main.md)  | [로그 파일](Evidence/02-DOCKER/Docker_Port.md)
 - [ ] 포트 매핑 후 서로 다른 포트로 2회 접속
 - [ ] 실행 명령어와 실제 화면 캡처 및 기록
 
 ## 8. 바인드 마운트
-### [주요 개념](Evidence/02-DOCKER/Main.md) 
+### [주요 개념](Evidence/02-DOCKER/Main.md) [로그 파일](Evidence/02-DOCKER/Docker_Bind.md)
 - [ ] 호스트·컨테이너 경로 연결 및 바인드 마운트 진행
 - [ ] 호스트 파일 변경 반영 확인 및 명령어·변경 전후 비교 기록
 
 ## 9. 볼륨 영속성
-### [주요 개념](Evidence/02-DOCKER/Main.md) 
+### [주요 개념](Evidence/02-DOCKER/Main.md) [로그 파일](Evidence/02-DOCKER/Docker_Volume.md)
 - [ ] 볼륨 생성·연결 및 데이터 저장
 - [ ] 기존 컨테이너 삭제 후 새 컨테이너에 동일 볼륨 연결
 - [ ] 데이터 유지 확인 및 명령어·삭제 전후 비교 기록
 
 ## 10. Git 설정 ∙ VSCode GitHub 연동
-### [주요 개념](Evidence/03-GIT/Main.md) 
+### [주요 개념](Evidence/03-GIT/Main.md) [로그 파일](Evidence/03-GIT/Git.md)
 - [ ] Git·GitHub 역할 이해 및 사용자 정보·기본 브랜치 설정, git config --list 기록
 - [ ] VSCode GitHub 로그인·저장소 연동 및 증거 업로드
 
