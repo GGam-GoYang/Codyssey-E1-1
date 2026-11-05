@@ -1,6 +1,6 @@
-# Git 주요 개념
-
 [← README로 돌아가기](../../README.md)
+
+# Git 주요 개념
 
 ## 1. Git과 GitHub
 
