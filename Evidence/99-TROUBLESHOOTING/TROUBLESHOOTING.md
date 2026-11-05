@@ -13,7 +13,7 @@
 
 HTML에 문자 인코딩 선언이 없어 브라우저가 문자를 올바르게 해석하지 못했을 가능성을 의심함.
 확인 결과, index.html에 UTF-8 선언이 없었음.
-```text
+```bash
 $ sudo docker exec e1-web-8080 cat /usr/share/nginx/html/index.html
 ```
 ```html
@@ -46,7 +46,7 @@ VM에서 `nano site/index.html`로 아래와 같이 수정함.
 
 기존 두 컨테이너(`e1-web-8080`, `e1-web-8081`)를 중지·삭제한 후, `e1-web:1.1` 이미지를 빌드하고 컨테이너를 재생성함.
 
-```text
+```bash
 $ sudo docker stop e1-web-8080 e1-web-8081
 e1-web-8080
 e1-web-8081
@@ -85,7 +85,7 @@ f3e82867d8e3ccf1e78f7fbc619394abc05c1eca56c02d26ae58e91ffb01438b
 #### 문제
 
 새 컨테이너 생성 중 기존 `e1-web-8081` 컨테이너와 이름 중복으로 인해 오류 발생함.
-```text
+```bash
 $ sudo docker run -d --name e1-web-8081 -p 127.0.0.1:8081:80 -v "$(pwd)/site:/usr/share/nginx/html:ro" e1-web:1.1
 
 docker: Error response from daemon: Conflict. The container name "/e1-web-8081" is already in use by container "f3e82867d8e3ccf1e78f7fbc619394abc05c1eca56c02d26ae58e91ffb01438b". You have to remove (or rename) that container to be able to reuse that name.
@@ -101,7 +101,7 @@ docker: Error response from daemon: Conflict. The container name "/e1-web-8081" 
 
 기존 `e1-web-8081` 컨테이너를 중지·삭제한 후, 바인드 마운트 명령어를 다시 실행함.
 
-```text
+```bash
 $ sudo docker stop e1-web-8081
 e1-web-8081
 
