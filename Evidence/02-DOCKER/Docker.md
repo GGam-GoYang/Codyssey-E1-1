@@ -95,7 +95,7 @@ Digest: sha256:fe81560990fae86dc4743202b2cb4d3df98d0bcf949173cecef15ce1127ef852
 Status: Downloaded newer image for ubuntu:24.04
 docker.io/library/ubuntu:24.04
 
-# 로컬에 설치된 이미지 목록 출력
+# 로컬에 저장된 이미지 목록 출력
 ~/Codyssey/Projects/E1-1/Docker$ sudo docker images
                                                                      i Info →   U  In Use
 IMAGE                ID             DISK USAGE   CONTENT SIZE   EXTRA

@@ -64,7 +64,7 @@ FROM nginx:alpine
 COPY site/ /usr/share/nginx/html/
 ```
 
-> 위는 `e1-web:1.0`의 최초 빌드 당시 html 코드임.<br>
+> 위는 `e1-web:1.0`의 최초 빌드 당시 HTML 코드임.<br>
 이후 브라우저 접속 시 한글 깨짐이 발생하여 HTML에 UTF-8 선언을 추가하고 `e1-web:1.1`로 빌드한 뒤 컨테이너를 재생성함.<br>상세 과정은 [트러블슈팅 사례 1](../99-TROUBLESHOOTING/TROUBLESHOOTING.md#사례-1) 참고.
 
 </details>
