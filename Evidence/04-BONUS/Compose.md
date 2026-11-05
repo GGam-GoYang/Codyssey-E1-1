@@ -151,7 +151,6 @@ e1-bonus-web-1      e1-web:1.1    "/docker-entrypoint.…"   web       3 hours a
 - `web`과 `client`가 모두 실행 상태로 확인됨.
 - `wget -qO- http://web:80/` 요청으로 HTML을 수신함.
 - `client`의 `localhost`가 아닌 `web`으로 다른 서비스에 접근함.
-- 첫 요청은 대문자 `O` 대신 숫자 `0`을 입력하여 실패함. 옵션 수정 후 성공함. `-O -`는 응답을 표준 출력으로 표시하는 옵션임.
 
 ## 3. Docker Compose 운영
 
