@@ -35,10 +35,10 @@ e1-web-8081
 
 ## 3. VM의 HTML 파일 수정
 
-```text
-~/Codyssey/Projects/E1-1/Docker/web$ nano site/index.html
+```bash
+:~/Codyssey/Projects/E1-1/Docker/web$ nano site/index.html
 
-~/Codyssey/Projects/E1-1/Docker/web$ cat site/index.html
+:~/Codyssey/Projects/E1-1/Docker/web$ cat site/index.html
 ```
 ```html
 <!DOCTYPE html>

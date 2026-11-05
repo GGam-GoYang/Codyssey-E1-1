@@ -27,24 +27,24 @@ COPY site/ /usr/share/nginx/html/
 
 ### 기존 컨테이너 확인 및 작업 폴더 준비
 
-```text
+```bash
 ~$ cd Codyssey/Projects/E1-1/Docker/
 
-~/Codyssey/Projects/E1-1/Docker$ sudo docker ps -a
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker ps -a
 [sudo] password for student:
 CONTAINER ID   IMAGE                COMMAND                   CREATED       STATUS                     PORTS     NAMES
 931f9c9ccac5   ubuntu:24.04         "bash -c 'echo \"My c…"   2 hours ago   Exited (137) 2 hours ago             e1-keep
 c4030efcc5f7   ubuntu:24.04         "bash"                    2 hours ago   Exited (0) 2 hours ago               e1-exit
 03d5d9d30be7   hello-world:latest   "/hello"                  2 hours ago   Exited (0) 2 hours ago               e1-hello
 
-~/Codyssey/Projects/E1-1/Docker$ mkdir -p web/site
-~/Codyssey/Projects/E1-1/Docker$ cd web
+:~/Codyssey/Projects/E1-1/Docker$ mkdir -p web/site
+:~/Codyssey/Projects/E1-1/Docker$ cd web
 ```
 
 ## 2. Dockerfile∙웹페이지 작성 및 내용 확인
 
-```text
-~/Codyssey/Projects/E1-1/Docker/web$ nano site/index.html
+```bash
+:~/Codyssey/Projects/E1-1/Docker/web$ nano site/index.html
 ```
 ```html
 <title>Codyssey E1-1 Mission Page</title>
@@ -53,10 +53,10 @@ c4030efcc5f7   ubuntu:24.04         "bash"                    2 hours ago   Exit
 <h2>Dockerfile로 만든 이미지를 통해 제공하는 페이지입니다!</h2>
 </body>
 ```
-```text
-~/Codyssey/Projects/E1-1/Docker/web$ nano Dockerfile
+```bash
+:~/Codyssey/Projects/E1-1/Docker/web$ nano Dockerfile
 ```
-```text
+```bash
 FROM nginx:alpine
 COPY site/ /usr/share/nginx/html/
 ```
@@ -66,8 +66,8 @@ COPY site/ /usr/share/nginx/html/
 
 ## 3. 커스텀 이미지 빌드
 
-```text
-~/Codyssey/Projects/E1-1/Docker/web$ sudo docker build -t e1-web:1.0 .
+```bash
+:~/Codyssey/Projects/E1-1/Docker/web$ sudo docker build -t e1-web:1.0 .
 DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
             Install the buildx component to build images with BuildKit:
             https://docs.docker.com/go/buildx/
@@ -112,22 +112,22 @@ Successfully tagged e1-web:1.0
 
 ## 4. 빌드 이미지 확인 및 컨테이너 실행
 
-```
-~/Codyssey/Projects/E1-1/Docker/web$ sudo docker images e1-web
+```bash
+:~/Codyssey/Projects/E1-1/Docker/web$ sudo docker images e1-web
                                                                                                            i Info →   U  In Use
 IMAGE        ID             DISK USAGE   CONTENT SIZE   EXTRA
 e1-web:1.0   be48e83b5367       93.2MB         26.3MB
-~/Codyssey/Projects/E1-1/Docker/web$ sudo docker run -d --name e1-web e1-web:1.0
+:~/Codyssey/Projects/E1-1/Docker/web$ sudo docker run -d --name e1-web e1-web:1.0
 0df9ea93d54d62d9b6175a32573a454779fdbbbbea29b4bb7ce07456ad9561b3
-~/Codyssey/Projects/E1-1/Docker/web$ sudo docker ps
+:~/Codyssey/Projects/E1-1/Docker/web$ sudo docker ps
 CONTAINER ID   IMAGE        COMMAND                  CREATED         STATUS         PORTS     NAMES
 0df9ea93d54d   e1-web:1.0   "/docker-entrypoint.…"   6 seconds ago   Up 5 seconds   80/tcp    e1-web
 ```
 
 ## 5. NGINX 로그 확인
   
-```
-~/Codyssey/Projects/E1-1/Docker/web$ sudo docker logs e1-web
+```bash
+:~/Codyssey/Projects/E1-1/Docker/web$ sudo docker logs e1-web
 /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
 /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
 /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
@@ -149,8 +149,10 @@ CONTAINER ID   IMAGE        COMMAND                  CREATED         STATUS     
 
 ## 6. 컨테이너 내부 index.html 파일 확인
   
+```bash
+:~/Codyssey/Projects/E1-1/Docker/web$ sudo docker exec e1-web cat /usr/share/nginx/html/index.html
 ```
-~/Codyssey/Projects/E1-1/Docker/web$ sudo docker exec e1-web cat /usr/share/nginx/html/index.html
+```html
 <title>Codyssey E1-1 Mission Page</title>
 <body>
 <h1>안녕하세요.</h1>

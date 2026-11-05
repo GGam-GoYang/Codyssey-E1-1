@@ -54,10 +54,10 @@ Volume persistence test
 
 ## 3. 첫 번째 컨테이너 삭제 및 볼륨 유지 확인
 
-```text
-~/Codyssey/Projects/E1-1/Docker$ sudo docker rm e1-volume-a
+```bash
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker rm e1-volume-a
 e1-volume-a
-~/Codyssey/Projects/E1-1/Docker$ sudo docker volume ls
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker volume ls
 DRIVER    VOLUME NAME
 local     e1-data
 ```
@@ -66,8 +66,8 @@ local     e1-data
 
 ## 4. 새 컨테이너에서 데이터 유지 확인
 
-```text
-~/Codyssey/Projects/E1-1/Docker$ sudo docker run --name e1-volume-b -v e1-data:/data:ro ubuntu:24.04 cat /data/note.txt
+```bash
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker run --name e1-volume-b -v e1-data:/data:ro ubuntu:24.04 cat /data/note.txt
 Volume persistence test
 ```
 

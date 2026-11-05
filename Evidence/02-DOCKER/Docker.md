@@ -4,11 +4,11 @@ Docker 버전과 데몬 연결을 확인한 뒤 이미지 다운로드, 컨테�
 
 ## 1. Docker 버전·데몬 및 초기 상태 확인
 
-```text
-~/Codyssey/Projects/E1-1/Docker$ docker --version # 도커 버전 확인
+```bash
+:~/Codyssey/Projects/E1-1/Docker$ docker --version # 도커 버전 확인
 Docker version 29.1.3, build 29.1.3-0ubuntu3~24.04.2
 
-~/Codyssey/Projects/E1-1/Docker$ sudo docker info # 도커 상세 정보 및 데몬과의 통신 확인
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker info # 도커 상세 정보 및 데몬과의 통신 확인
 Client:
  Version:    29.1.3
  Context:    default
@@ -69,15 +69,15 @@ Server:
  Live Restore Enabled: false
  Firewall Backend: iptables
 
-~/Codyssey/Projects/E1-1/Docker$ sudo docker ps -a # 도커 컨테이너 전체 상태 확인
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker ps -a # 도커 컨테이너 전체 상태 확인
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
 
 ## 2. 이미지 다운로드·목록 확인
 
-```text
+```bash
 # hello-world의 latest 이미지를 pull
-~/Codyssey/Projects/E1-1/Docker$ sudo docker pull hello-world:latest 
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker pull hello-world:latest 
 latest: Pulling from library/hello-world
 58dee6a49ef1: Pull complete
 c3bdf82c34d1: Download complete
@@ -86,7 +86,7 @@ Status: Downloaded newer image for hello-world:latest
 docker.io/library/hello-world:latest
 
 # Ubuntu 24.04 릴리즈의 이미지를 pull
-~/Codyssey/Projects/E1-1/Docker$ sudo docker pull ubuntu:24.04
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker pull ubuntu:24.04
 24.04: Pulling from library/ubuntu
 e2d2bb84d022: Pull complete
 2238dc1b4376: Download complete
@@ -95,7 +95,7 @@ Status: Downloaded newer image for ubuntu:24.04
 docker.io/library/ubuntu:24.04
 
 # 로컬에 저장된 이미지 목록 출력
-~/Codyssey/Projects/E1-1/Docker$ sudo docker images
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker images
                                                                      i Info →   U  In Use
 IMAGE                ID             DISK USAGE   CONTENT SIZE   EXTRA
 hello-world:latest   c567b231f656       22.6kB         10.3kB
@@ -104,9 +104,9 @@ ubuntu:24.04         fe81560990fa        141MB         30.9MB
 
 ## 3. hello-world 실행∙종료 상태∙로그 확인
 
-```text
+```bash
 # hello-world:latest로 'e1-hello'라는 이름의 컨테이너 생성∙실행
-~/Codyssey/Projects/E1-1/Docker$ sudo docker run --name e1-hello hello-world:latest
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker run --name e1-hello hello-world:latest
 
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
@@ -130,16 +130,16 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 
 # 실행 중인 컨테이너 목록 출력(hello-world의 경우 텍스트 출력 후 자동 종료되기에 미포함)
-~/Codyssey/Projects/E1-1/Docker$ sudo docker ps
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 # 모든 상태의 컨테이너 목록 출력(종료되었던 hello-world 출력 확인)
-~/Codyssey/Projects/E1-1/Docker$ sudo docker ps -a
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker ps -a
 CONTAINER ID   IMAGE                COMMAND    CREATED          STATUS                      PORTS     NAMES
 03d5d9d30be7   hello-world:latest   "/hello"   22 seconds ago   Exited (0) 21 seconds ago             e1-hello
 
 # e1-hello의 전체 로그 출력
-~/Codyssey/Projects/E1-1/Docker$ sudo docker logs e1-hello 
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker logs e1-hello 
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
@@ -164,9 +164,9 @@ For more examples and ideas, visit:
 
 ## 4. Ubuntu 내부 명령 및 메인 셸 종료 관찰
 
-```text
+```bash
 # 설치된 ubuntu:24.04 이미지로 e1-exit의 이름의 컨테이너 생성 후 bash 실행.
-~/Codyssey/Projects/E1-1/Docker$ sudo docker run -it --name e1-exit ubuntu:24.04 bash
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker run -it --name e1-exit ubuntu:24.04 bash
 root@c4030efcc5f7:/# pwd
 /
 
@@ -197,11 +197,11 @@ root@c4030efcc5f7:/# exit
 exit
 
 # exit 명령어로 인해 실행 중인 컨테이너 목록에 e1-exit 없음
-~/Codyssey/Projects/E1-1/Docker$ sudo docker ps
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 # e1-exit의 상태가 Exited 인걸 확인할 수 있음
-~/Codyssey/Projects/E1-1/Docker$ sudo docker ps -a
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker ps -a
 CONTAINER ID   IMAGE                COMMAND    CREATED              STATUS                          PORTS     NAMES
 c4030efcc5f7   ubuntu:24.04         "bash"     31 seconds ago       Exited (0) 5 seconds ago                  e1-exit
 03d5d9d30be7   hello-world:latest   "/hello"   About a minute ago   Exited (0) About a minute ago             e1-hello
@@ -209,22 +209,22 @@ c4030efcc5f7   ubuntu:24.04         "bash"     31 seconds ago       Exited (0) 5
 
 ## 5. 백그라운드 실행
 
-```text
+```bash
 # 우분투 이미지로 e1-keep 컨테이너 생성 후 백그라운드(-d) 실행 bash -c는 뒤의 '문자열'을 명령어로 인식하게 함. 
-~/Codyssey/Projects/E1-1/Docker$ sudo docker run -d --name e1-keep ubuntu:24.04 bash -c 'echo "My container started"; exec sleep infinity'
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker run -d --name e1-keep ubuntu:24.04 bash -c 'echo "My container started"; exec sleep infinity'
 # 컨테이너 ID 전달 받음
 931f9c9ccac585bf3ad1d2a4c37f5419b307998cd9be4e51ed760750d351196e
 
 # e1-keep가 Exited가 아닌 Up 상태인 걸 확인할 수 있음
-~/Codyssey/Projects/E1-1/Docker$ sudo docker ps
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker ps
 CONTAINER ID   IMAGE          COMMAND                   CREATED          STATUS          PORTS     NAMES
 931f9c9ccac5   ubuntu:24.04   "bash -c 'echo \"My c…"   17 seconds ago   Up 16 seconds             e1-keep
 ```
 
 ## 6. exec 셸 종료 후 컨테이너 유지 확인
 
-```text
-~/Codyssey/Projects/E1-1/Docker$ sudo docker exec -it e1-keep bash
+```bash
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker exec -it e1-keep bash
 root@931f9c9ccac5:/# pwd
 /
 
@@ -238,52 +238,52 @@ shell was opened with docker exec
 root@931f9c9ccac5:/# exit
 exit
 
-~/Codyssey/Projects/E1-1/Docker$ sudo docker ps
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker ps
 CONTAINER ID   IMAGE          COMMAND                   CREATED          STATUS          PORTS     NAMES
 931f9c9ccac5   ubuntu:24.04   "bash -c 'echo \"My c…"   52 seconds ago   Up 51 seconds             e1-keep
 ```
 
 ## 7. 로그∙리소스 확인
 
-```text
-~/Codyssey/Projects/E1-1/Docker$ sudo docker logs e1-keep
+```bash
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker logs e1-keep
 My container started
 
-~/Codyssey/Projects/E1-1/Docker$ sudo docker stats --no-stream e1-keep
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker stats --no-stream e1-keep
 CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O         BLOCK I/O    PIDS
 931f9c9ccac5   e1-keep   0.00%     416KiB / 1.913GiB   0.02%     3.49kB / 126B   0B / 4.1kB   1
 ```
 
 ## 8. 중지·재시작 및 최종 상태 확인
 
-```text
-~/Codyssey/Projects/E1-1/Docker$ sudo docker stop e1-keep
+```bash
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker stop e1-keep
 e1-keep
 
-~/Codyssey/Projects/E1-1/Docker$ sudo docker ps
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
-~/Codyssey/Projects/E1-1/Docker$ sudo docker ps -a
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker ps -a
 CONTAINER ID   IMAGE                COMMAND                   CREATED              STATUS                       PORTS     NAMES
 931f9c9ccac5   ubuntu:24.04         "bash -c 'echo \"My c…"   About a minute ago   Exited (137) 5 seconds ago             e1-keep
 c4030efcc5f7   ubuntu:24.04         "bash"                    2 minutes ago        Exited (0) 2 minutes ago               e1-exit
 03d5d9d30be7   hello-world:latest   "/hello"                  3 minutes ago        Exited (0) 3 minutes ago               e1-hello
 
-~/Codyssey/Projects/E1-1/Docker$ sudo docker start e1-keep
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker start e1-keep
 e1-keep
 
-~/Codyssey/Projects/E1-1/Docker$ sudo docker ps
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker ps
 CONTAINER ID   IMAGE          COMMAND                   CREATED              STATUS         PORTS     NAMES
 931f9c9ccac5   ubuntu:24.04   "bash -c 'echo \"My c…"   About a minute ago   Up 8 seconds             e1-keep
 
-~/Codyssey/Projects/E1-1/Docker$ sudo docker stop e1-keep
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker stop e1-keep
 e1-keep
 
-~/Codyssey/Projects/E1-1/Docker$ sudo docker ps -a
+:~/Codyssey/Projects/E1-1/Docker$ sudo docker ps -a
 CONTAINER ID   IMAGE                COMMAND                   CREATED         STATUS                       PORTS     NAMES
 931f9c9ccac5   ubuntu:24.04         "bash -c 'echo \"My c…"   2 minutes ago   Exited (137) 9 seconds ago             e1-keep
 c4030efcc5f7   ubuntu:24.04         "bash"                    3 minutes ago   Exited (0) 3 minutes ago               e1-exit
 03d5d9d30be7   hello-world:latest   "/hello"                  4 minutes ago   Exited (0) 4 minutes ago               e1-hello
 
-~/Codyssey/Projects/E1-1/Docker$
+:~/Codyssey/Projects/E1-1/Docker$
 ```

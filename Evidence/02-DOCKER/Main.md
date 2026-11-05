@@ -21,7 +21,7 @@
 - 실행 결과 : 해당 Docker 명령을 관리자 권한으로 실행
 - `sudo`는 모든 환경에서 필수인 Docker 문법은 아니며, 이번 실습에서 사용한 실행 방식임.
 
-```text
+```bash
 sudo docker ps
 ```
 
@@ -31,7 +31,7 @@ sudo docker ps
 - 실행 결과 : 설치된 Docker CLI 버전 출력
 - CLI 버전 출력만으로 데몬 연결 성공까지 확인한 것은 아님.
 
-```text
+```bash
 docker --version
 ```
 
@@ -41,7 +41,7 @@ docker --version
 - 실행 결과 : 클라이언트·서버 정보와 컨테이너·이미지 개수 등의 정보 출력
 - 이번 로그에서는 Server 정보가 출력되어 데몬과 통신한 것을 확인함.
 
-```text
+```bash
 sudo docker info
 ```
 
@@ -51,7 +51,7 @@ sudo docker info
 - 실행 결과 : 지정한 이미지와 태그 다운로드
 - `ubuntu`는 이미지 이름, `24.04`는 태그. 태그가 가리키는 이미지는 갱신될 수 있으며 digest는 이미지 콘텐츠 식별에 사용됨.
 
-```text
+```bash
 sudo docker pull hello-world:latest
 sudo docker pull ubuntu:24.04
 ```
@@ -61,7 +61,7 @@ sudo docker pull ubuntu:24.04
 - 명령어 : `sudo docker images`
 - 실행 결과 : 로컬 이미지의 이름·태그·ID·용량 등 출력
 
-```text
+```bash
 sudo docker images
 ```
 
@@ -71,7 +71,7 @@ sudo docker images
 - 실행 결과 : 이미지로 새 컨테이너를 생성하고 실행
 - `--name`은 컨테이너 이름을 지정. 이미지 이름과 컨테이너 이름은 서로 다른 값이며, 기존 컨테이너 이름은 중복 사용할 수 없음.
 
-```text
+```bash
 sudo docker run --name e1-hello hello-world:latest
 ```
 
@@ -81,7 +81,7 @@ sudo docker run --name e1-hello hello-world:latest
 - 실행 결과 : 실행 중인 컨테이너 또는 종료된 컨테이너를 포함한 전체 목록 출력
 - `-a`는 종료 상태도 포함. `Up`은 실행 중, `Exited`는 종료 상태를 의미함.
 
-```text
+```bash
 sudo docker ps
 sudo docker ps -a
 ```
@@ -92,7 +92,7 @@ sudo docker ps -a
 - 실행 결과 : 새 컨테이너의 메인 프로세스로 bash를 실행하고 대화형 터미널 연결
 - `-i`는 표준 입력 유지, `-t`는 가상 터미널 할당.
 
-```text
+```bash
 sudo docker run -it --name e1-exit ubuntu:24.04 bash
 ```
 
@@ -102,7 +102,7 @@ sudo docker run -it --name e1-exit ubuntu:24.04 bash
 - 실행 결과 : 현재 경로·목록·OS 정보·문구를 확인하고 셸 종료
 - 이 예시는 컨테이너 내부에서 실행. e1-exit의 메인 bash에서 exit하면 컨테이너도 종료됨.
 
-```text
+```bash
 pwd
 ls
 cat /etc/os-release
@@ -116,7 +116,7 @@ exit
 - 실행 결과 : 컨테이너를 백그라운드로 실행하고 ID 출력
 - `-d`는 백그라운드 실행, `bash -c`는 문자열을 셸 명령으로 실행. 셸의 `exec sleep infinity`는 Ubuntu 환경에서 bash를 sleep으로 교체하여 대기하게 함. `-d` 자체가 프로그램을 무한 실행시키는 것은 아님.
 
-```text
+```bash
 sudo docker run -d --name e1-keep ubuntu:24.04 bash -c 'echo "My container started"; exec sleep infinity'
 ```
 
@@ -126,7 +126,7 @@ sudo docker run -d --name e1-keep ubuntu:24.04 bash -c 'echo "My container start
 - 실행 결과 : 실행 중인 컨테이너에서 추가 bash 셸 실행
 - 추가 셸에서 exit해도 메인 프로세스 sleep은 유지됨. Docker의 exec 명령과 bash 내부의 exec 명령은 구분해야 함.
 
-```text
+```bash
 sudo docker exec -it e1-keep bash
 ```
 
@@ -136,7 +136,7 @@ sudo docker exec -it e1-keep bash
 - 실행 결과 : 컨테이너 로그 출력
 - 기본적으로 컨테이너 메인 프로세스 쪽의 표준 출력·오류를 확인하는 기능. exec로 연 대화형 터미널의 모든 입력과 출력을 모으는 기능은 아님.
 
-```text
+```bash
 sudo docker logs e1-hello
 sudo docker logs e1-keep
 ```
@@ -147,7 +147,7 @@ sudo docker logs e1-keep
 - 실행 결과 : CPU·메모리·네트워크 등의 사용량을 한 번 출력
 - `--no-stream`은 연속 갱신하지 않고 한 번 출력 후 종료. 수치는 측정 시점마다 달라질 수 있음.
 
-```text
+```bash
 sudo docker stats --no-stream e1-keep
 ```
 
@@ -157,7 +157,7 @@ sudo docker stats --no-stream e1-keep
 - 실행 결과 : 실행 중인 컨테이너 중지. 컨테이너 자체는 삭제하지 않음
 - 일반적으로 종료 신호를 보내고, 제한 시간 내 종료되지 않으면 강제 종료함.
 
-```text
+```bash
 sudo docker stop e1-keep
 sudo docker ps -a
 ```
@@ -168,7 +168,7 @@ sudo docker ps -a
 - 실행 결과 : 정지된 기존 컨테이너를 다시 실행
 - run은 새로 생성하고 실행하지만, start는 기존 컨테이너를 다시 실행함.
 
-```text
+```bash
 sudo docker start e1-keep
 sudo docker ps
 ```
