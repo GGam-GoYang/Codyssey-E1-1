@@ -151,7 +151,8 @@ Codyssey-E1-1/
 
 <details>
 <summary><h1>보너스 과제</h1></summary>
-  
+    
+### [주요 개념](Evidence/04-BONUS/Main.md) | [Compose 실습 로그](Evidence/04-BONUS/Compose.md)| [GitHub 실습 로그](Evidence/04-BONUS/GitHub.md)
 ## 1. Docker Compose 기초
 - [ ] Compose 파일의 기본 구조 이해 및 단일 서비스 실행
 - [ ] 실행 설정을 파일로 관리하는 이유 정리 및 실행 결과 기록
