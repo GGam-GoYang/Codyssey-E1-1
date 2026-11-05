@@ -29,6 +29,57 @@ $ git --version
 git version 2.43.0
 ```
 
+## 프로젝트 구조
+
+```text
+Codyssey-E1-1/
+├── README.md                       # 프로젝트 개요, 실행 환경 및 체크리스트
+├── Dockerfile                      # 커스텀 웹 서버 이미지 빌드 설정
+├── STUDY_LOG.md                     # 학습 기록용 문서
+├── site/
+│   ├── index.html                  # 이미지 빌드에 사용하는 웹페이지
+│   └── index_bind.html             # 바인드 마운트 실습에서 수정한 내용의 사본
+└── Evidence/
+    ├── 00-INDEX/
+    │   └── Evidence.md             # 실습 문서 및 로그 링크 모음
+    ├── 01-TERMINAL/
+    │   ├── Main.md                 # 터미널 및 권한 주요 개념
+    │   ├── Terminal.md             # 터미널 조작 명령 및 실행 결과
+    │   └── Permission_Change.md    # 권한 변경 및 전후 비교 기록
+    ├── 02-DOCKER/
+    │   ├── Main.md                 # Docker 주요 개념
+    │   ├── Docker.md               # Docker 설치 및 기본 운영 기록
+    │   ├── DockerFile.md           # Dockerfile 작성 및 이미지 빌드 기록
+    │   ├── Docker_Port.md          # 포트 매핑 및 접속 확인 기록
+    │   ├── Docker_Bind.md          # 바인드 마운트 및 파일 변경 반영 기록
+    │   ├── Docker_Volume.md        # 컨테이너 삭제 전후 볼륨 데이터 유지 기록
+    │   └── Images/
+    │       ├── port_18080.png      # 첫 번째 포트 접속 화면
+    │       ├── port_18081.png      # 두 번째 포트 접속 화면
+    │       └── bind_mount.png      # 바인드 마운트 파일 변경 후 화면
+    ├── 03-GIT/
+    │   ├── Main.md                 # Git 주요 개념 정리용 문서
+    │   ├── Git.md                  # Git 설정 로그 및 VSCode 연동 기록
+    │   └── Images/
+    │       ├── git_push.png        # VSCode 소스 제어 및 커밋 상태
+    │       └── git_sync.png        # VSCode GitHub 계정 로그인 상태
+    └── 99-TROUBLESHOOTING/
+        └── TROUBLESHOOTING.md      # 문제, 원인, 해결 및 재검증 기록
+```
+
+### 구성 기준
+
+| 구분 | 구성 기준 |
+| --- | --- |
+| 루트 | 프로젝트 안내 문서와 이미지 빌드에 필요한 Dockerfile 배치 |
+| `site/` | 웹페이지 소스와 바인드 마운트 실습의 수정본 사본 보관 |
+| `Evidence/00-INDEX/` | 실습 문서에 접근할 수 있도록 링크를 모음 |
+| `Evidence/01-TERMINAL/` | 터미널 조작 및 권한 실습의 개념과 실행 기록 보관 |
+| `Evidence/02-DOCKER/` | Docker 개념과 항목별 실행 기록을 분리하여 보관 |
+| `Evidence/03-GIT/` | Git 개념, 설정 로그 및 VSCode GitHub 연동 증거 보관 |
+| 각 실습 폴더의 `Images/` | 해당 실습의 화면 캡처 보관 |
+| `Evidence/99-TROUBLESHOOTING/` | 발생한 문제의 원인 확인, 해결 과정 및 결과 정리 |
+
 <details>
 <summary><h1>체크리스트</h1></summary>
   
@@ -88,8 +139,8 @@ git version 2.43.0
 
 ## 10. Git 설정 ∙ VSCode GitHub 연동
 ### [주요 개념](Evidence/03-GIT/Main.md) | [로그 파일](Evidence/03-GIT/Git.md)
-- [ ] Git·GitHub 역할 이해 및 사용자 정보·기본 브랜치 설정, git config --list 기록
-- [ ] VSCode GitHub 로그인·저장소 연동 및 증거 업로드
+- [x] Git·GitHub 역할 이해 및 사용자 정보·기본 브랜치 설정, git config --list 기록
+- [x] VSCode GitHub 로그인·저장소 연동 및 증거 업로드
 </details>
 
 <details>
