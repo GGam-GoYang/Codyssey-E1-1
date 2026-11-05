@@ -154,18 +154,18 @@ Codyssey-E1-1/
     
 ### [주요 개념](Evidence/04-BONUS/Main.md) | [Compose 실습 로그](Evidence/04-BONUS/Compose.md) | [GitHub 실습 로그](Evidence/04-BONUS/GitHub.md)
 ## 1. Docker Compose 기초
-- [ ] Compose 파일의 기본 구조 이해 및 단일 서비스 실행
-- [ ] 실행 설정을 파일로 관리하는 이유 정리 및 실행 결과 기록
+- [x] Compose 파일의 기본 구조 이해 및 단일 서비스 실행
+- [x] 실행 설정을 파일로 관리하는 이유 정리 및 실행 결과 기록
 
 ## 2. Docker Compose 멀티 컨테이너
-- [ ] 웹 서버·보조 서비스 등 2개 이상 동시 실행
-- [ ] 컨테이너 간 통신 확인 및 명령어·결과 기록
+- [x] 웹 서버·보조 서비스 등 2개 이상 동시 실행
+- [x] 컨테이너 간 통신 확인 및 명령어·결과 기록
 
 ## 3. Docker Compose 운영
-- [ ] up·down·ps·logs를 통한 실행·종료·상태·로그 관리 및 결과 기록
+- [x] up·down·ps·logs를 통한 실행·종료·상태·로그 관리 및 결과 기록
 
 ## 4. 환경변수 활용
-- [ ] Dockerfile 또는 Compose에서 환경변수를 주입하여 서버 포트·모드 중 하나 변경
+- [x] Dockerfile 또는 Compose에서 환경변수를 주입하여 서버 포트·모드 중 하나 변경
 - [ ] 변경 전후 동작 비교 및 설정과 코드의 분리 의미 정리
 
 ## 5. GitHub SSH 키 설정
