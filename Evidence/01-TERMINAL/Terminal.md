@@ -88,7 +88,7 @@ total 8
 :~/Codyssey/Projects/E1-1/Terminal$ cd /tmp
 /tmp$ pwd
 /tmp
-/tmp$ cd :~/Codyssey/Projects/E1-1/Terminal/
+/tmp$ cd ~/Codyssey/Projects/E1-1/Terminal/
 :~/Codyssey/Projects/E1-1/Terminal$ pwd
 /home/student/Codyssey/Projects/E1-1/Terminal
 ```

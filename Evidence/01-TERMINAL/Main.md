@@ -28,7 +28,7 @@ E1-1  TESTDIR
 - 명령어 : cd 경로
 - 실행 결과 : 입력한 디렉토리로 이동. '..' 입력 시 상위 디렉토리로 이동
 ```bash
-~/test$ cd :~/Codyssey/Projects/E1-1
+:~/test$ cd ~/Codyssey/Projects/E1-1
 :~/Codyssey/Projects/E1-1$
 
 :~$ cd Codyssey/
@@ -77,7 +77,7 @@ ls -la
 cd original/
 cd ..
 cd /tmp
-cd :~/Codyssey/Projects/E1-1/Terminal/
+cd ~/Codyssey/Projects/E1-1/Terminal/
 ```
 
 ### 내용을 가진 파일 생성 (printf 및 출력 리다이렉션)
