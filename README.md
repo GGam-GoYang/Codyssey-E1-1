@@ -117,7 +117,7 @@ Codyssey-E1-1/
 
 ## 6. Dockerfile 사용
 ### [주요 개념](Evidence/02-DOCKER/Main.md) | [로그 파일](Evidence/02-DOCKER/DockerFile.md)
-- [ ] 베이스 선택 및 커스텀 내용·목적 설명
+- [x] 베이스 선택 및 커스텀 내용·목적 설명
 - [x] 웹 소스·Dockerfile 작성 및 저장소 업로드
 - [x] 이미지 빌드·컨테이너 실행 후 명령어·결과 기록
 
