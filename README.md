@@ -141,6 +141,11 @@ Codyssey-E1-1/
 ### [주요 개념](Evidence/03-GIT/Main.md) | [로그 파일](Evidence/03-GIT/Git.md)
 - [x] Git·GitHub 역할 이해 및 사용자 정보·기본 브랜치 설정, git config --list 기록
 - [x] VSCode GitHub 로그인·저장소 연동 및 증거 업로드
+
+## 11. 트러블슈팅 사례 해결 및 기록
+### 트러블슈팅 기록 | [사례 1](Evidence/99-TROUBLESHOOTING/TROUBLESHOOTING.md#사례-1) | [사례 2](Evidence/99-TROUBLESHOOTING/TROUBLESHOOTING.md#사례-2)
+- [x] 사례 1 - 포트 매핑 후 index.html 브라우저 접속 시 한글 출력 깨짐
+- [x] 사례 2 - 바인드 마운트 진행 중 컨테이너 이름 중복으로 인한 컨테이너 생성 실패
 </details>
 
 <details>
