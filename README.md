@@ -8,6 +8,7 @@ Codyssey E1-1 Personal Mission
 ## 실행 환경
 | 항목 | 실제 값 |
 | --- | --- |
+| 환경 | VM on MacMini |
 | OS | ARM Ubuntu 24.04.4 LTS |
 | 셸 | Bash |
 | 터미널 | PuTTY 0.85 |
