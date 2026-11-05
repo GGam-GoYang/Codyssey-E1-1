@@ -1,5 +1,7 @@
 # Git 주요 개념
 
+[← README로 돌아가기](../../README.md)
+
 ## 1. Git과 GitHub
 
 | 구분 | 역할 |
