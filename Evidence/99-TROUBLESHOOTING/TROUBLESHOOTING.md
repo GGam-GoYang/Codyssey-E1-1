@@ -78,4 +78,45 @@ f3e82867d8e3ccf1e78f7fbc619394abc05c1eca56c02d26ae58e91ffb01438b
 - 호스트 파일 수정만으로는 Dockerfile의 `COPY`로 이미지를 빌드할 때 복사한 파일에는 반영되지 않음.
 
 ## 사례 2
-### 사례2 내용
+### 컨테이너 이름 중복으로 인한 생성 실패
+
+#### 문제
+
+새 컨테이너 생성 중 기존 `e1-web-8081` 컨테이너와 이름 중복으로 인해 오류 발생함.
+```text
+$ sudo docker run -d --name e1-web-8081 -p 127.0.0.1:8081:80 -v "$(pwd)/site:/usr/share/nginx/html:ro" e1-web:1.1
+
+docker: Error response from daemon: Conflict. The container name "/e1-web-8081" is already in use by container "f3e82867d8e3ccf1e78f7fbc619394abc05c1eca56c02d26ae58e91ffb01438b". You have to remove (or rename) that container to be able to reuse that name.
+```
+
+#### 원인 가설 및 확인
+
+- 기존 컨테이너가 같은 이름을 사용하고 있어 새 컨테이너 생성에 오류가 발생한 것으로 판단함.
+- 실제 오류 메시지에서 `e1-web-8081` 이름이 기존 컨테이너에 할당되어 있음을 확인함.
+- 새 컨테이너의 이름을 수정하거나 기존 컨테이너를 삭제하면 오류가 해결될 것으로 판단함.
+
+#### 해결
+
+기존 `e1-web-8081` 컨테이너를 중지·삭제한 후, 바인드 마운트 명령어를 다시 실행함.
+
+```text
+$ sudo docker stop e1-web-8081
+e1-web-8081
+
+$ sudo docker rm e1-web-8081
+e1-web-8081
+
+$ sudo docker run -d --name e1-web-8081 -p 127.0.0.1:8081:80 -v "$(pwd)/site:/usr/share/nginx/html:ro" e1-web:1.1
+0f3406297b66a7cfcafdeb8958c0a3a8fef306b5f582503dec24e98bee8f7cfc
+```
+
+#### 재검증 및 결과
+
+- 기존 컨테이너 삭제 후 명령어를 다시 실행했을 때 같은 오류가 재현되지 않음.
+- 새 컨테이너 ID가 출력되어 생성 및 실행에 성공한 것을 확인함.
+- 이후 과정은 [바인드 마운트 로그](../02-DOCKER/Docker_Bind.md)를 참고.
+
+#### 재발 방지 및 배운 점
+
+- 새 컨테이너 생성 전 `sudo docker ps -a`로 전체 컨테이너들의 이름을 확인함.
+- 컨테이너를 중지해도 이름은 유지되므로 중지만으로 해당 오류가 해결되지는 않음.
