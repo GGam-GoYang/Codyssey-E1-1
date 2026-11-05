@@ -1,7 +1,7 @@
 # Dockerfile 이미지 빌드 및 실행 로그
 
 <details>
-<summary><h2>1. 기존 컨테이너 확인 및 작업 폴더 준비</h2></summary>
+<summary><h2>1. 이미지 빌드 전 사전 준비</h2></summary>
 
 ### 베이스 이미지 선택
 
@@ -26,8 +26,9 @@ COPY site/ /usr/share/nginx/html/
 - 생성한 이미지로 컨테이너를 실행하여 작성한 웹페이지를 제공함.
 - 호스트 파일 수정만으로는 기존 이미지에 복사한 내용이 변경되지 않으므로, 수정 내용을 이미지에 포함하려면 다시 빌드해야 함.
 
+### 기존 컨테이너 확인 및 작업 폴더 준비
+
 ```text
-Last login: Wed Nov  4 14:07:44 2026 from 192.168.5.2
 ~$ cd Codyssey/Projects/E1-1/Docker/
 
 ~/Codyssey/Projects/E1-1/Docker$ sudo docker ps -a
