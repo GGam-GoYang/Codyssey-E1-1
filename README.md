@@ -10,7 +10,7 @@ Codyssey E1-1 Personal Mission
 | --- | --- |
 | OS | ARM Ubuntu 24.04.4 LTS |
 | 셸 | Bash |
-| 터미널 | Putty 0.85 |
+| 터미널 | PuTTY 0.85 |
 | Docker 버전 | 29.1.3 |
 | Git 버전 | 2.43.0 |
 | 저장 | `https://github.com/GGam-GoYang/Codyssey-E1-1.git` |
@@ -39,11 +39,11 @@ git version 2.43.0
 ## 2. README.md
 - [x] 프로젝트 개요와 미션 목표 요약
 - [x] 실행 환경 작성 : OS, 셸, 터미널, Docker 버전, Git 버전
-- [x] 수행 항목 체크리스트 작성 : 터미널, 권한, Docker, DockerFile, 포트, 볼륨, Git, GitHub
+- [x] 수행 항목 체크리스트 작성 : 터미널, 권한, Docker, Dockerfile, 포트, 볼륨, Git, GitHub
 - [ ] 검증 방법 기록
 - [ ] 검증 결과 파일, 링크를 통해 본문에 연결
 - [ ] 트러블슈팅 2건 이상 기록
-- [ ] 기술 문서 만으로 전체 수행 내용 파악 가능한지 확인
+- [ ] 기술 문서만으로 전체 수행 내용 파악 가능한지 확인
 
 ## 3. 터미널 조작
 ### [주요 개념](Evidence/01-TERMINAL/Main.md#터미널-조작) | [로그 파일](Evidence/01-TERMINAL/Terminal.md)
@@ -64,10 +64,10 @@ git version 2.43.0
 - [x] 컨테이너 종료/유지 차이 관찰
 - [x] 컨테이너 로그·리소스 확인 및 명령어·출력 기록
 
-## 6. DockerFile 사용
+## 6. Dockerfile 사용
 ### [주요 개념](Evidence/02-DOCKER/Main.md) | [로그 파일](Evidence/02-DOCKER/DockerFile.md)
 - [ ] 베이스 선택 및 커스텀 내용·목적 설명
-- [x] 웹 소스·DockerFile 작성 및 저장소 업로드
+- [x] 웹 소스·Dockerfile 작성 및 저장소 업로드
 - [x] 이미지 빌드·컨테이너 실행 후 명령어·결과 기록
 
 ## 7. 포트 매핑 및 접속 테스트
@@ -107,7 +107,7 @@ git version 2.43.0
 - [ ] up·down·ps·logs를 통한 실행·종료·상태·로그 관리 및 결과 기록
 
 ## 4. 환경변수 활용
-- [ ] DockerFile 또는 Compose에서 환경변수를 주입하여 서버 포트·모드 중 하나 변경
+- [ ] Dockerfile 또는 Compose에서 환경변수를 주입하여 서버 포트·모드 중 하나 변경
 - [ ] 변경 전후 동작 비교 및 설정과 코드의 분리 의미 정리
 
 ## 5. GitHub SSH 키 설정
