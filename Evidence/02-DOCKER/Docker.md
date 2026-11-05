@@ -1,9 +1,8 @@
-[← README로 돌아가기](../../README.md)
-
 # Docker 설치 및 운영 로그
 
-<details>
-<summary><h2>1. Docker 버전·데몬 및 초기 상태 확인</h2></summary>
+Docker 버전과 데몬 연결을 확인한 뒤 이미지 다운로드, 컨테이너 실행·종료 및 운영 명령을 수행함. 메인 셸을 종료한 경우와 추가 셸만 종료한 경우의 상태를 비교함.
+
+## 1. Docker 버전·데몬 및 초기 상태 확인
 
 ```text
 ~/Codyssey/Projects/E1-1/Docker$ docker --version # 도커 버전 확인
@@ -73,10 +72,8 @@ Server:
 ~/Codyssey/Projects/E1-1/Docker$ sudo docker ps -a # 도커 컨테이너 전체 상태 확인
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
-</details>
 
-<details>
-<summary><h2>2. 이미지 다운로드·목록 확인</h2></summary>
+## 2. 이미지 다운로드·목록 확인
 
 ```text
 # hello-world의 latest 이미지를 pull
@@ -104,10 +101,8 @@ IMAGE                ID             DISK USAGE   CONTENT SIZE   EXTRA
 hello-world:latest   c567b231f656       22.6kB         10.3kB
 ubuntu:24.04         fe81560990fa        141MB         30.9MB
 ```
-</details>
 
-<details>
-<summary><h2>3. hello-world 실행∙종료 상태∙로그 확인</h2></summary>
+## 3. hello-world 실행∙종료 상태∙로그 확인
 
 ```text
 # hello-world:latest로 'e1-hello'라는 이름의 컨테이너 생성∙실행
@@ -166,10 +161,8 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
-</details>
 
-<details>
-<summary><h2>4. Ubuntu 내부 명령 및 메인 셸 종료 관찰</h2></summary>
+## 4. Ubuntu 내부 명령 및 메인 셸 종료 관찰
 
 ```text
 # 설치된 ubuntu:24.04 이미지로 e1-exit의 이름의 컨테이너 생성 후 bash 실행.
@@ -213,10 +206,8 @@ CONTAINER ID   IMAGE                COMMAND    CREATED              STATUS      
 c4030efcc5f7   ubuntu:24.04         "bash"     31 seconds ago       Exited (0) 5 seconds ago                  e1-exit
 03d5d9d30be7   hello-world:latest   "/hello"   About a minute ago   Exited (0) About a minute ago             e1-hello
 ```
-</details>
 
-<details>
-<summary><h2>5. 백그라운드 실행</h2></summary>
+## 5. 백그라운드 실행
 
 ```text
 # 우분투 이미지로 e1-keep 컨테이너 생성 후 백그라운드(-d) 실행 bash -c는 뒤의 '문자열'을 명령어로 인식하게 함. 
@@ -229,10 +220,8 @@ c4030efcc5f7   ubuntu:24.04         "bash"     31 seconds ago       Exited (0) 5
 CONTAINER ID   IMAGE          COMMAND                   CREATED          STATUS          PORTS     NAMES
 931f9c9ccac5   ubuntu:24.04   "bash -c 'echo \"My c…"   17 seconds ago   Up 16 seconds             e1-keep
 ```
-</details>
 
-<details>
-<summary><h2>6. exec 셸 종료 후 컨테이너 유지 확인</h2></summary>
+## 6. exec 셸 종료 후 컨테이너 유지 확인
 
 ```text
 ~/Codyssey/Projects/E1-1/Docker$ sudo docker exec -it e1-keep bash
@@ -253,10 +242,8 @@ exit
 CONTAINER ID   IMAGE          COMMAND                   CREATED          STATUS          PORTS     NAMES
 931f9c9ccac5   ubuntu:24.04   "bash -c 'echo \"My c…"   52 seconds ago   Up 51 seconds             e1-keep
 ```
-</details>
 
-<details>
-<summary><h2>7. 로그∙리소스 확인</h2></summary>
+## 7. 로그∙리소스 확인
 
 ```text
 ~/Codyssey/Projects/E1-1/Docker$ sudo docker logs e1-keep
@@ -266,10 +253,8 @@ My container started
 CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O         BLOCK I/O    PIDS
 931f9c9ccac5   e1-keep   0.00%     416KiB / 1.913GiB   0.02%     3.49kB / 126B   0B / 4.1kB   1
 ```
-</details>
 
-<details>
-<summary><h2>8. 중지·재시작 및 최종 상태 확인</h2></summary>
+## 8. 중지·재시작 및 최종 상태 확인
 
 ```text
 ~/Codyssey/Projects/E1-1/Docker$ sudo docker stop e1-keep
@@ -302,4 +287,3 @@ c4030efcc5f7   ubuntu:24.04         "bash"                    3 minutes ago   Ex
 
 ~/Codyssey/Projects/E1-1/Docker$
 ```
-</details>

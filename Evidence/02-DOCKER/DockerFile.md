@@ -1,9 +1,6 @@
-[← README로 돌아가기](../../README.md)
-
 # Dockerfile 이미지 빌드 및 실행 로그
 
-<details>
-<summary><h2>1. 이미지 빌드 전 사전 준비</h2></summary>
+## 1. 이미지 빌드 전 사전 준비
 
 ### 베이스 이미지 선택
 
@@ -43,10 +40,8 @@ c4030efcc5f7   ubuntu:24.04         "bash"                    2 hours ago   Exit
 ~/Codyssey/Projects/E1-1/Docker$ mkdir -p web/site
 ~/Codyssey/Projects/E1-1/Docker$ cd web
 ```
-</details>
 
-<details>
-<summary><h2>2. Dockerfile∙웹페이지 작성 및 내용 확인</h2></summary>
+## 2. Dockerfile∙웹페이지 작성 및 내용 확인
 
 ```text
 ~/Codyssey/Projects/E1-1/Docker/web$ nano site/index.html
@@ -69,10 +64,7 @@ COPY site/ /usr/share/nginx/html/
 > 위는 `e1-web:1.0`의 최초 빌드 당시 HTML 코드임.<br>
 이후 브라우저 접속 시 한글 깨짐이 발생하여 HTML에 UTF-8 선언을 추가하고 `e1-web:1.1`로 빌드한 뒤 컨테이너를 재생성함.<br>상세 과정은 [트러블슈팅 사례 1](../99-TROUBLESHOOTING/TROUBLESHOOTING.md#사례-1) 참고.
 
-</details>
-
-<details>
-<summary><h2>3. 커스텀 이미지 빌드</h2></summary>
+## 3. 커스텀 이미지 빌드
 
 ```text
 ~/Codyssey/Projects/E1-1/Docker/web$ sudo docker build -t e1-web:1.0 .
@@ -117,10 +109,8 @@ Step 2/2 : COPY site/ /usr/share/nginx/html/
 Successfully built be48e83b5367
 Successfully tagged e1-web:1.0
 ```
-</details>
 
-<details>
-<summary><h2>4. 빌드 이미지 확인 및 컨테이너 실행</h2></summary>
+## 4. 빌드 이미지 확인 및 컨테이너 실행
 
 ```
 ~/Codyssey/Projects/E1-1/Docker/web$ sudo docker images e1-web
@@ -133,10 +123,8 @@ e1-web:1.0   be48e83b5367       93.2MB         26.3MB
 CONTAINER ID   IMAGE        COMMAND                  CREATED         STATUS         PORTS     NAMES
 0df9ea93d54d   e1-web:1.0   "/docker-entrypoint.…"   6 seconds ago   Up 5 seconds   80/tcp    e1-web
 ```
-</details>
 
-<details>
-<summary><h2>5. NGINX 로그 확인</h2></summary>
+## 5. NGINX 로그 확인
   
 ```
 ~/Codyssey/Projects/E1-1/Docker/web$ sudo docker logs e1-web
@@ -158,10 +146,8 @@ CONTAINER ID   IMAGE        COMMAND                  CREATED         STATUS     
 2026/11/04 06:38:17 [notice] 1#1: start worker process 30
 2026/11/04 06:38:17 [notice] 1#1: start worker process 31
 ```
-</details>
 
-<details>
-<summary><h2>6. 컨테이너 내부 index.html 파일 확인</h2></summary>
+## 6. 컨테이너 내부 index.html 파일 확인
   
 ```
 ~/Codyssey/Projects/E1-1/Docker/web$ sudo docker exec e1-web cat /usr/share/nginx/html/index.html
@@ -171,4 +157,3 @@ CONTAINER ID   IMAGE        COMMAND                  CREATED         STATUS     
 <h2>Dockerfile로 만든 이미지를 통해 제공하는 페이지입니다!</h2>
 </body>
 ```
-</details>
