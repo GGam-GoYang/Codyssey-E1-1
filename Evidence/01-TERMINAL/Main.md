@@ -71,7 +71,7 @@ ls -la
 | `/home/student/Codyssey` | 절대 경로 | `/`부터 지정한 전체 경로 |
 | `original/` | 상대 경로 | 현재 디렉토리 아래의 `original` |
 | `..` | 상대 경로 | 현재 디렉토리의 상위 디렉토리 |
-| `:~/Codyssey` | 홈 기준 경로 | 사용자 홈 아래의 `Codyssey` |
+| `~/Codyssey` | 홈 기준 경로 | 사용자 홈 아래의 `Codyssey` |
 
 ```bash
 cd original/
