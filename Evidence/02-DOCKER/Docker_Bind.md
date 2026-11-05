@@ -62,7 +62,7 @@ e1-web-8081
 
 ### 확인한 내용
 
-- 컨테이너 생성 후 VM의 `site/index.html`을 수정함. index_bind.html로 첨부.
+- 컨테이너 생성 후 VM의 `site/index.html`을 수정함. 수정본을 'site/index_bind.html'에 첨부함.
 - 바인드 마운트 반영 여부를 구분할 수 있도록 새로운 문구를 추가함.
 - `cat`으로 VM 파일에 추가 문구가 저장된 것을 확인함.
 
