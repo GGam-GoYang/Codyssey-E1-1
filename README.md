@@ -166,10 +166,9 @@ Codyssey-E1-1/
 
 ## 4. 환경변수 활용
 - [x] Dockerfile 또는 Compose에서 환경변수를 주입하여 서버 포트·모드 중 하나 변경
-- [ ] 변경 전후 동작 비교 및 설정과 코드의 분리 의미 정리
+- [x] 변경 전후 동작 비교 및 설정과 코드의 분리 의미 정리
 
 ## 5. GitHub SSH 키 설정
-- [ ] SSH 키 생성·등록 및 HTTPS와 SSH 인증 방식 차이 이해
-- [ ] SSH 방식의 원격 저장소 설정·푸시 성공 확인 및 결과 기록
-- [Evidence](Evidence/00-INDEX/Evidence.md) 
+- [x] SSH 키 생성·등록 및 HTTPS와 SSH 인증 방식 차이 이해
+- [x] SSH 방식의 원격 저장소 설정·푸시 성공 확인 및 결과 기록
 </details>
