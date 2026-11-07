@@ -1,6 +1,6 @@
 [← README로 돌아가기](../../README.md) | [Compose 실습 로그](Compose.md) | [GitHub 실습 로그](GitHub.md)
 
-# Docker Compose 주요 개념
+# 보너스 과제 주요 개념
 
 ## 1. Docker Compose 기초
 
@@ -33,6 +33,8 @@
 
 ## 4. 환경변수 활용
 
+### 호스트 포트 변경
+
 - `127.0.0.1:${WEB_PORT:-8082}:80`은 호스트 게시 포트만 변수로 설정함.
 - `${WEB_PORT:-8082}`는 값이 없거나 비어 있으면 `8082`를 사용함.
 - `sudo env WEB_PORT=8083 docker compose -p e1-bonus up -d`는 해당 실행에 변수 값을 전달함.
@@ -49,6 +51,16 @@
 - 명령어: `sudo env APP_PORT=8080 docker compose -p e1-bonus up -d`
 - 실행 결과: 컨테이너 환경변수와 Nginx 내부 포트 8080 적용, 호스트 8083에서 동일한 HTML 수신.
 - 변경 전후 기록은 [Compose 실습 로그](Compose.md)에 보관함.
+
+### .env 파일로 설정값 저장
+
+- `.env`에 `WEB_PORT=8083`, `APP_PORT=8080`처럼 값을 저장하여 다음 실행에도 재사용함.
+- `sudo docker compose --env-file .env -p e1-bonus up -d`로 지정한 파일의 값을 읽어 설정을 적용함.
+- `${WEB_PORT:-8082}`는 호스트 포트, `${APP_PORT:-80}`는 내부 포트에 사용함.
+- `.env`는 Compose 치환용이며 컨테이너로 자동 주입되지 않음. `environment.APP_PORT`로 전달한 값을 Nginx 템플릿에서 사용함.
+- 파일 수정만으로 실행 중인 서비스가 변경되지는 않으므로 `up -d`로 다시 적용함.
+- Compose 프로세스의 같은 이름의 셸 환경변수는 `.env`보다 우선할 수 있으므로 `config`로 적용값을 확인함.
+- [.env 실행 기록](Compose.md#4-환경변수-활용--env-파일-사용)에서 호스트 8083을 유지한 채 APP_PORT와 Nginx 내부 포트를 80에서 8080으로 변경하고 동일한 HTML 응답을 확인함.
 
 ## 5. GitHub SSH 키 설정
 
