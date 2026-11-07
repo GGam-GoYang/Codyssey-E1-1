@@ -39,3 +39,44 @@
 - 변수 값 변경으로 호스트 접속 포트를 8082에서 8083으로 변경하고 동일한 HTML 응답을 확인함.
 - 컨테이너 내부 Nginx 포트는 80으로 유지됨. Compose 치환과 컨테이너의 `environment:` 설정은 서로 다름.
 - 코드·이미지와 실행 설정을 분리하면 동일한 웹 콘텐츠를 다른 접속 설정으로 제공할 수 있음.
+
+### 컨테이너 환경변수 주입과 실제 서버 설정
+
+- `environment.APP_PORT`는 컨테이너 프로세스에 변수를 전달함.
+- Nginx 이미지의 시작 스크립트가 `/etc/nginx/templates/default.conf.template`의 `${APP_PORT}`를 치환하여 `/etc/nginx/conf.d/default.conf`를 생성함.
+- ports의 대상 포트도 같은 APP_PORT로 맞춰 서버의 리슨 포트와 연결이 일치하도록 함.
+- read-only 마운트는 원본 템플릿 경로에 적용되며 생성된 Nginx 설정 파일은 컨테이너 내부에 기록됨.
+- 명령어: `sudo env APP_PORT=8080 docker compose -p e1-bonus up -d`
+- 실행 결과: 컨테이너 환경변수와 Nginx 내부 포트 8080 적용, 호스트 8083에서 동일한 HTML 수신.
+- 변경 전후 기록은 [Compose 실습 로그](Compose.md)에 보관함.
+
+## 5. GitHub SSH 키 설정
+
+### HTTPS와 SSH 인증
+
+- HTTPS와 SSH는 원격 저장소에 접근하는 전송·인증 방식임. HTTPS는 토큰·자격증명 도구 등을, SSH는 등록된 공개키와 대응하는 개인키를 사용함.
+- 공개키는 GitHub에 등록하며 개인키와 키 암호는 공유하거나 레포에 올리지 않음.
+
+### PowerShell에서 SSH 키 생성·등록·인증
+
+- 개인 Windows 노트북의 PowerShell에서 SSH 관련 명령을 실행함.
+- `ssh-keygen -t ed25519 -C "Codyssey-GitHub"`로 Ed25519 키를 생성함.
+- `Get-Content "$HOME\.ssh\id_ed25519.pub" | Set-Clipboard`로 공개키를 복사하여 GitHub에 등록함.
+- `ssh -T git@github.com`으로 GitHub 계정 인증을 확인함.
+
+### 서버 호스트 키 확인
+
+- 호스트 키는 접속할 서버의 신원을 확인하기 위한 키임. 첫 연결 시 서버 호스트 키를 확인하고 신뢰 여부를 선택함.
+
+### 원격 주소 변경 및 푸시
+
+| 명령어 | 실행 결과 |
+| --- | --- |
+| `git remote set-url origin git@github.com:GGam-GoYang/Codyssey-E1-1.git` | 현재 레포의 origin 주소를 SSH 방식으로 변경 |
+| `git remote -v` | fetch·push 원격 주소 확인 |
+| `git status -sb` | 현재 브랜치와 작업 상태 확인 |
+| `git push origin HEAD` | 현재 브랜치를 origin으로 푸시 |
+
+`Everything up-to-date`는 새로 전송할 커밋이 없다는 뜻임.
+
+[SSH 실행 기록](GitHub.md)
