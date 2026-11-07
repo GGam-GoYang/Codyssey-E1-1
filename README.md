@@ -36,12 +36,12 @@ git version 2.43.0
 Codyssey-E1-1/
 ├── README.md                       # 프로젝트 개요, 실행 환경 및 체크리스트
 ├── Dockerfile                      # 커스텀 웹 서버 이미지 빌드 설정
-├── STUDY_LOG.md                     # 학습 기록용 문서
-├── compose/
-│   ├── docker-compose.yml
-│   ├── .env.example
-│   └── templates/
-│       └── default.conf.template
+├── STUDY_LOG.md                    # 학습 기록용 문서
+├── compose/                        # Docker Compose 실행 설정 및 환경변수 예시
+│   ├── docker-compose.yml          # 서비스, 환경변수, 포트 및 마운트 설정
+│   ├── .env.template               # 호스트·컨테이너 포트 환경변수 예시
+│   └── templates/                  # Nginx 설정 생성용 템플릿 보관
+│       └── default.conf.template   # 환경변수로 Nginx 내부 포트를 지정하는 템플릿
 ├── site/
 │   ├── index.html                  # 이미지 빌드에 사용하는 웹페이지
 │   └── index_bind.html             # 바인드 마운트 실습에서 수정한 내용의 사본
