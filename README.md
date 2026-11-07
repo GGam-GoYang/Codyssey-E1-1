@@ -37,6 +37,11 @@ Codyssey-E1-1/
 ├── README.md                       # 프로젝트 개요, 실행 환경 및 체크리스트
 ├── Dockerfile                      # 커스텀 웹 서버 이미지 빌드 설정
 ├── STUDY_LOG.md                     # 학습 기록용 문서
+├── compose/
+│   ├── docker-compose.yml
+│   ├── .env.example
+│   └── templates/
+│       └── default.conf.template
 ├── site/
 │   ├── index.html                  # 이미지 빌드에 사용하는 웹페이지
 │   └── index_bind.html             # 바인드 마운트 실습에서 수정한 내용의 사본
