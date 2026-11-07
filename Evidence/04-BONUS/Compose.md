@@ -165,10 +165,6 @@ e1-bonus-web-1      e1-web:1.1    "/docker-entrypoint.…"   web       3 hours a
 </html>
 ```
 
-```bash
-:~/Codyssey/Projects/E1-1/compose$
-```
-
 ### 실행 결과
 
 - `web`과 `client`가 모두 실행 상태로 확인됨.
