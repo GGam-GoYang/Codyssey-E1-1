@@ -42,9 +42,18 @@ e1-web:1.1   9466840bb879       93.2MB         26.3MB    U
 # Compose 실습 디렉토리로 이동
 :~$ cd Codyssey/Projects/E1-1/compose/
 
-# Compose 설정 파일 편집
+# Compose 설정 파일 편집 및 확인
 :~/Codyssey/Projects/E1-1/compose$ nano docker-compose.yml 
-
+:~/Codyssey/Projects/E1-1/compose$ cat docker-compose.yml
+```
+```yml
+services:
+  web:
+    image: e1-web:1.1
+    ports:
+      - "127.0.0.1:8082:80"
+```
+```bash
 # 변수 치환 후 Compose 설정 확인
 :~/Codyssey/Projects/E1-1/compose$ sudo docker compose -p e1-bonus config
 name: e1-bonus
