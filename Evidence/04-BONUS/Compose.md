@@ -15,14 +15,6 @@ Compose 버전과 사용할 이미지·기존 컨테이너를 확인한 뒤, 단
 :~$ docker compose version
 Docker Compose version 2.40.3+ds1-0ubuntu1~24.04.1
 
-# 사용할 로컬 이미지 확인
-:~$ sudo docker images e1-web
-[sudo] password for student:
-        i Info →   U  In Use
-IMAGE        ID             DISK USAGE   CONTENT SIZE   EXTRA
-e1-web:1.0   be48e83b5367       93.2MB         26.3MB    U
-e1-web:1.1   9466840bb879       93.2MB         26.3MB    U
-
 # 기존 컨테이너 이름·이미지·포트 확인
 :~$ sudo docker ps --format 'table {{.Names}}\t{{.Image}}\t{{.Ports}}'
 NAMES         IMAGE        PORTS
